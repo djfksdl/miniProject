@@ -25,26 +25,6 @@ public class Mini {
 		Reader fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
 		BufferedReader br = new BufferedReader(fr);
 		
-		//리스트 만들기
-		List<String> person = new ArrayList<String>();
-		
-		//리스트에 잘라서 배열 넣기
-		while(true) {
-			
-			String str = br.readLine();
-			
-			if(str == null) {
-				break;
-			}
-			String[] phoneBook = str.split(",");
-//			String name = phoneBook[0];
-//			String hp = phoneBook[1];
-//			String company = phoneBook[2];
-			person.add(str);
-//			System.out.println(str.indent(0)+ name+"\t" + hp+"\t"+company);
-		}
-		
-		
 		
 		//시작화면
 		System.out.println("*********************************************");
@@ -56,49 +36,60 @@ public class Mini {
 		
 		//스캐너 준비
 		Scanner sc = new Scanner(System.in);
-
+		List<String> person = new ArrayList<String>();
 		
 		//계속 메뉴번호 물어보기
 		while(true) {
 			System.out.print("메뉴번호: ");
 			int num = sc.nextInt();
-			
 			//case별 조건
 			switch(num) {
 			
 			case 1:
-//				person.clear();
+				person.clear();
 				//리스트 보여주기
 				System.out.println("<1.리스트>");
 				//리스트로 저장
-
+				while(true) {
+					
+					String str = br.readLine();
+					
+					if(str == null) {
+						break;
+					}
+//					String[] phoneBook = str.split(",");
+//					String name = phoneBook[0];
+//					String hp = phoneBook[1];
+//					String company = phoneBook[2];
+					person.add(str);
+//					System.out.println(str.indent(0)+ name+"\t" + hp+"\t"+company);
+				}
 				for(int i = 0; i<person.size(); i++) {
 					System.out.println(i+1 +"."+  person.get(i));					
 				}
 				br.close();
-				
-//			    fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
-//				br = new BufferedReader(fr);
+			    fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
+				br = new BufferedReader(fr);
 				continue;
 				
 			case 2:
-//				person.clear();
+				person.clear();
 				//등록
-//				while(true) {
-//					String str = br.readLine();
-//					
-//					if(str == null) {
-//						break;
-//					}
-////					String[] phoneBook = str.split(",");
-////					String name = phoneBook[0];
-////					String hp = phoneBook[1];
-////					String company = phoneBook[2];
-//					
-////					System.out.println(str);
-//					person.add(str);
-//					
-//				}
+				while(true) {
+					String str = br.readLine();
+					
+					if(str == null) {
+						break;
+					}
+//					String[] phoneBook = str.split(",");
+//					String name = phoneBook[0];
+//					String hp = phoneBook[1];
+//					String company = phoneBook[2];
+					
+//					System.out.println(str);
+					person.add(str);
+					
+				}
 //				System.out.println(person.toString());
 				
 				System.out.println("<2.등록>");
@@ -123,30 +114,30 @@ public class Mini {
 
 				bw.write(name+","+hp+","+company);
 				bw.flush();
-//				br.close();
+				br.close();
 				bw.close();
 				
-//				fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
-//				br = new BufferedReader(fr);
+				fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
+				br = new BufferedReader(fr);
 				System.out.println("[등록되었습니다.]");				
 				continue;
 				
 			case 3:
 				//삭제
-//				person.clear();
-//				while(true) {
-//					String str = br.readLine();
-//					
-//					if(str == null) {
-//						break;
-//					}
-////					String[] phoneBook = str.split(",");
-////					name = phoneBook[0];
-////					hp = phoneBook[1];
-////					company = phoneBook[2];
-//					person.add(str);
-//					
-//				}
+				person.clear();
+				while(true) {
+					String str = br.readLine();
+					
+					if(str == null) {
+						break;
+					}
+//					String[] phoneBook = str.split(",");
+//					name = phoneBook[0];
+//					hp = phoneBook[1];
+//					company = phoneBook[2];
+					person.add(str);
+					
+				}
 				
 				System.out.println("<3.삭제>");
 				
@@ -164,32 +155,32 @@ public class Mini {
 					bw2.newLine();
 				}
 				
-//				br.close();
+				br.close();
 				bw2.close();
 				
-//				fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
-//				br = new BufferedReader(fr);
+				fr = new FileReader("C:\\javaStudy\\PhoneDB_mini.txt");
+				br = new BufferedReader(fr);
 				System.out.println("[삭제되었습니다.]");
 				continue;
 			case 4:
 				
 				//검색
 				
-//				person.clear();
-//				while(true) {
-//					String str = br.readLine();
-//					
-//					if(str == null) {
-//						break;
-//					}
-////					String[] phoneBook = str.split(",");
-////					name = phoneBook[0];
-////					hp = phoneBook[1];
-////					company = phoneBook[2];
-////					System.out.println(str);
-//					person.add(str);
-//					
-//				}
+				person.clear();
+				while(true) {
+					String str = br.readLine();
+					
+					if(str == null) {
+						break;
+					}
+//					String[] phoneBook = str.split(",");
+//					name = phoneBook[0];
+//					hp = phoneBook[1];
+//					company = phoneBook[2];
+//					System.out.println(str);
+					person.add(str);
+					
+				}
 //				System.out.println(person.toString());
 				
 				System.out.println("<4.검색>");
@@ -224,6 +215,7 @@ public class Mini {
 		//종료
 		sc.close();
 		br.close();
+//		bw.close();
 		
 		
 	}
